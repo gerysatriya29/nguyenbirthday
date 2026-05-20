@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nguyen's Birthday 🤡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f0f12;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===== BACKGROUND BLUR ===== */
+
+.bg-blur{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:url('cover.jpg') center center/cover no-repeat;
+    filter:blur(35px) brightness(0.35);
+    transform:scale(1.1);
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.4),
+        rgba(0,0,0,.7)
+    );
+    z-index:-1;
+}
+
+/* ===== FLOATING EFFECT ===== */
+
+.floating{
+    animation:floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0px);}
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+}
+
+.hero-card{
+    max-width:420px;
+    width:100%;
+    padding:28px;
+    border-radius:30px;
+    backdrop-filter:blur(16px);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+    animation:fadeUp 1.4s ease;
+}
+
+.cover-photo{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    object-position:center;
+    border-radius:24px;
+    margin-bottom:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.hero h1{
+    font-size:42px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.hero p{
+    opacity:.85;
+    line-height:1.7;
+}
+
+.scroll-btn{
+    margin-top:25px;
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:999px;
+    background:white;
+    color:black;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.scroll-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* ===== SECTION ===== */
+
+.section{
+    padding:90px 24px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    font-size:38px;
+    text-align:center;
+    margin-bottom:16px;
+}
+
+.section-sub{
+    text-align:center;
+    opacity:.75;
+    margin-bottom:50px;
+}
+
+/* ===== MESSAGE ===== */
+
+.message-box{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border-radius:28px;
+    padding:30px;
+    line-height:2;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+    animation:fadeUp 1s ease;
+}
+
+/* ===== GALLERY ===== */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:24px;
+    cursor:pointer;
+    transition:.4s;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+    filter:brightness(1.08);
+}
+
+/* ===== LIGHTBOX ===== */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+    padding:20px;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:22px;
+    animation:zoom .4s ease;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* ===== DONATE ===== */
+
+.donate{
+    text-align:center;
+}
+
+.qr-box{
+    margin-top:24px;
+    display:inline-block;
+    padding:20px;
+    background:white;
+    border-radius:24px;
+}
+
+.qr-box img{
+    width:220px;
+    height:220px;
+    object-fit:contain;
+}
+
+/* ===== FOOTER ===== */
+
+.footer{
+    text-align:center;
+    padding:40px 20px 80px;
+    opacity:.65;
+}
+
+/* ===== ANIMATION ===== */
+
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== MUSIC BUTTON ===== */
+
+.music-btn{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:none;
+    background:white;
+    color:black;
+    font-size:22px;
+    cursor:pointer;
+    z-index:999;
+    box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg-blur"></div>
+<div class="overlay"></div>
+
+<!-- MUSIC -->
+<audio id="music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-card floating">
+
+        <!-- FOTO COVER -->
+        <img src="cover.jpg" class="cover-photo"/>
+
+        <h1>Happy Birthday Manusia Si Paling Sabar 🗿🗿🗿🗿🗿</h1>
+
+        <p>
+            semakin tua,<br>
+            semoga semakin logis👄💦
+        </p>
+
+        <a href="#gallery" class="scroll-btn">
+            Klik di sini untuk mengenang
+        </a>
+
+    </div>
+
+</section>
+
+<!-- MESSAGE -->
+<section class="section fade-in">
+
+    <h2 class="section-title">Ucapan Kangin Kauh 💌</h2>
+    <p class="section-sub">rahayu rahayu rahayuuu</p>
+
+    <div class="message-box">
+
+        Selamat ulang tahun wiii <br>
+
+        walaupun di desa orang2 ngga pake dollar (kecuali Desa Canggu),<br>
+	semoga semua hal baik datang dari segala arah,<br>
+        semoga semua mimpi yang lagi diperjuangkan bisa tercapai satu per satu <br>
+	semoga selalu ada cintanya🫶🫰<br><br>
+
+	tetap membumi, tetap rendah hati,<br>
+	tetap semangat dan sehat selalu.<br>
+			
+        <br>
+        enjoy your day,
+        chilll🤙🤙🤙
+
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="section fade-in" id="gallery">
+
+    <h2 class="section-title">Hasil jepretan tangan yang tak pernah digandeng 📸</h2>
+    <p class="section-sub">little moments, big memories</p>
+    <p class="section-sub">yakali ga nambah foto-foto nya</p>
+    <div class="gallery">
+
+        <!-- FOTO CANDID -->
+        <img src="1.jpg" onclick="openLightbox(this.src)">
+        <img src="2.jpg" onclick="openLightbox(this.src)">
+        <img src="3.jpg" onclick="openLightbox(this.src)">
+        <img src="4.jpg" onclick="openLightbox(this.src)">
+        <img src="5.jpg" onclick="openLightbox(this.src)">
+        <img src="6.jpg" onclick="openLightbox(this.src)">
+        <img src="7.jpg" onclick="openLightbox(this.src)">
+        <img src="8.jpg" onclick="openLightbox(this.src)">
+        <img src="9.jpg" onclick="openLightbox(this.src)">
+        <img src="10.jpg" onclick="openLightbox(this.src)">
+        <img src="11.jpg" onclick="openLightbox(this.src)">
+        <img src="12.jpg" onclick="openLightbox(this.src)">
+
+    </div>
+
+</section>
+
+<!-- DONATE -->
+<section class="section donate fade-in">
+
+    <h2 class="section-title">Birthday Gift 🎁</h2>
+
+    <p class="section-sub">
+        apa gejala awalnya bisa sekeren itu? ✨
+    </p>
+
+    <div class="qr-box">
+        <img src="qr.png" alt="QR Donate">
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    made with love, sambil sambat akkkhhhhhhhh
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+
+/* ===== LIGHTBOX ===== */
+
+function openLightbox(src){
+    document.getElementById('lightbox').classList.add('active');
+    document.getElementById('lightbox-img').src = src;
+}
+
+function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('active');
+}
+
+/* ===== MUSIC ===== */
+
+const music = document.getElementById('music');
+
+function toggleMusic(){
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+}
+
+/* ===== SCROLL ANIMATION ===== */
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.fade-in').forEach(el=>{
+    observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
