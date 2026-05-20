@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Bestie 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff8dc7, #8fbcff, #b892ff);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 30px;
+      padding: 28px;
+      text-align: center;
+      color: white;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      animation: floatCard 3s ease-in-out infinite;
+    }
+
+    @keyframes floatCard {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.25);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .photo {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid rgba(255,255,255,0.5);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .nickname {
+      color: #fff8a6;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    p {
+      font-size: 0.96rem;
+      line-height: 1.7;
+      opacity: 0.95;
+      margin-top: 10px;
+    }
+
+    .highlight {
+      font-weight: 700;
+      color: #fff8a6;
+    }
+
+    .btn {
+      margin-top: 25px;
+      display: inline-block;
+      background: white;
+      color: #8a4fff;
+      padding: 14px 24px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #fff8a6;
+    }
+
+    .emoji {
+      position: absolute;
+      font-size: 24px;
+      animation: floatEmoji 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatEmoji {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-120px) rotate(360deg);
+      }
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .music-note {
+      margin-top: 12px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    @media(max-width: 480px) {
+      .card {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .photo {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="emoji" style="left:10%; animation-duration:6s;">🎉</div>
+  <div class="emoji" style="left:30%; animation-duration:8s;">🎂</div>
+  <div class="emoji" style="left:50%; animation-duration:7s;">💅</div>
+  <div class="emoji" style="left:70%; animation-duration:9s;">🕺</div>
+  <div class="emoji" style="left:90%; animation-duration:6.5s;">✨</div>
+
+  <div class="card">
+    <div class="badge">⚡ BESTIE BIRTHDAY ALERT ⚡</div>
+
+    <div class="photo">
+      <!-- GANTI FOTO DI SINI -->
+      <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=600&auto=format&fit=crop" alt="Foto Teman">
+    </div>
+
+    <h1>Happy Birthday <br><span class="nickname">Bestieee 🎂</span></h1>
+
+    <p>
+      Selamat ulang tahun buat manusia paling <span class="highlight">random</span>,
+      paling <span class="highlight">berisik</span>, tapi tetap paling seru sedunia 😭✨
+    </p>
+
+    <p>
+      Semoga panjang umur, sehat selalu,
+      saldo e-wallet tidak pernah kritis,
+      dan muka tetap glowing walaupun sering begadang scrolling TikTok sampe subuh 🫠
+    </p>
+
+    <p>
+      Jangan lupa traktir ya,
+      karena bertambah umur artinya bertambah juga kewajiban mentraktir teman 😌☕
+    </p>
+
+    <a href="#" class="btn">🎁 Claim Hadiah Bestie</a>
+
+    <div class="music-note">
+      🎵 “Hari ini bukan hari biasa, karena dunia pernah beruntung punya kamu.”
+    </div>
+
+    <div class="footer">
+      dibuat penuh cinta + sedikit roasting 💜
+    </div>
+  </div>
+
+</body>
+</html>
